@@ -1,0 +1,22 @@
+{
+    "name": "NAME",
+    "location": "LOCATION",
+    "coords": {
+        "lat": 0,
+        "lng": 0
+    },
+    "dates": [3],
+    "seat_count": [3],
+    "price": [3],
+    "theme": "THEME",
+    "short_description": "SHORT DESCRIPTION",
+    "long_description": "LONG DESCRIPTION",
+    "return_policy_specifics": "RETURN POLICY",
+    "organizer_contact": "E@MAIL.com",
+    "hashtags": [1,10],
+    "optional": {
+        "food_provided": ["Provided","Available","Not Available"],
+        "age_restriction": "X+",
+        "number_of_tickets_per_buyer": 1
+    }
+}

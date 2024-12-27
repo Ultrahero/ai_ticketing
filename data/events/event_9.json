@@ -1,0 +1,38 @@
+{
+    "name": "Jazz Soul Night: Ella Blu",
+    "location": "The Velvet Lounge, New York City, NY",
+    "coords": {
+        "lat": 40.7128,
+        "lng": -74.0060
+    },
+    "dates": [
+        "September 10, 2024; 7:00 PM - 10:00 PM"
+    ],
+    "seat_count": [
+        150
+    ],
+    "price": [
+        80
+    ],
+    "theme": "Jazz Soul Concert",
+    "short_description": "An intimate evening with Ella Blu and her soulful jazz band.",
+    "long_description": "Experience the smooth sounds of Ella Blu in an exclusive concert at The Velvet Lounge. With her soulful jazz band, Ella promises a night of enchanting melodies and heartwarming performances. Pre-show by The Sax Quartet.",
+    "return_policy_specifics": "Tickets are non-refundable but transferable.",
+    "organizer_contact": "bookings@velvetlounge.com",
+    "hashtags": [
+        "#EllaBluLive",
+        "#JazzSoul",
+        "#NYCEvents",
+        "#LiveMusic",
+        "#SoulfulSounds",
+        "#VelvetLounge",
+        "#JazzConcert",
+        "#MusicLovers",
+        "#TheSaxQuartet"
+    ],
+    "optional": {
+        "food_provided": "Available",
+        "age_restriction": "18+",
+        "number_of_tickets_per_buyer": 4
+    }
+}

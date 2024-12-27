@@ -1,0 +1,47 @@
+{
+    "name": "Symphony Under the Stars",
+    "location": "Central Park Open-Air Theatre, New York City, NY",
+    "coords": {
+        "lat": 40.785091,
+        "lng": -73.968285
+    },
+    "dates": [
+        "June 15, 2024; 7:00 PM - 10:00 PM",
+        "June 16, 2024; 7:00 PM - 10:00 PM",
+        "June 17, 2024; 7:00 PM - 10:00 PM"
+    ],
+    "seat_count": [
+        500,
+        500,
+        500
+    ],
+    "price": [
+        45,
+        50,
+        55
+    ],
+    "theme": "Classical Music Night",
+    "short_description": "A magical evening of classical music under the night sky featuring the city\u2019s renowned philharmonic orchestra.",
+    "long_description": "Immerse yourself in a captivating night of classical music, where the beauty of live symphony meets the ambiance of an open-air venue. Central Park Open-Air Theatre hosts this three-night spectacle featuring compositions by Beethoven, Mozart, and Tchaikovsky, performed by the New York Philharmonic Orchestra. Bring a blanket, settle under the stars, and experience the timeless elegance of classical music.",
+    "return_policy_specifics": "Tickets are refundable up to 48 hours before the event start time. After that, tickets are non-refundable.",
+    "organizer_contact": "info@symphonyevents.com",
+    "hashtags": [
+        "#ClassicalMusic",
+        "#OpenAirConcert",
+        "#SymphonyNight",
+        "#FamilyEvent",
+        "#NYCEvents",
+        "#PhilharmonicOrchestra",
+        "#CentralPark",
+        "#MusicUnderTheStars",
+        "#Beethoven",
+        "#Mozart",
+        "#Tchaikovsky",
+        "#MusicLovers"
+    ],
+    "optional": {
+        "food_provided": "Available",
+        "age_restriction": "6+",
+        "number_of_tickets_per_buyer": 6
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "name": "Starlight Cinema Nights",
+    "location": "Riverside Park, Austin, TX",
+    "coords": {
+        "lat": 30.2596,
+        "lng": -97.7387
+    },
+    "dates": [
+        "May 10, 2024; 8pm - 1am",
+        "May 11, 2024; 8pm - 1am"
+    ],
+    "seat_count": [
+        300,
+        300
+    ],
+    "price": [
+        15,
+        15
+    ],
+    "theme": "Outdoor Cinema",
+    "short_description": "Enjoy classic movies under the stars in the heart of Austin.",
+    "long_description": "Bring your friends, family, and a picnic to enjoy iconic films at Riverside Park. Relax on the lawn with a blanket or lawn chair, and let the cinematic magic unfold under the open sky.",
+    "return_policy_specifics": "Refundable up to 24 hours before the event.",
+    "organizer_contact": "cinema@starlight.com",
+    "hashtags": [
+        "#OutdoorCinema",
+        "#MovieNight",
+        "#AustinEvents",
+        "#StarlightCinema",
+        "#ClassicMovies",
+        "#UnderTheStars",
+        "#FamilyFun",
+        "#DateNight",
+        "#FilmLovers"
+    ],
+    "optional": {
+        "food_provided": null,
+        "age_restriction": null,
+        "number_of_tickets_per_buyer": null
+    }
+}

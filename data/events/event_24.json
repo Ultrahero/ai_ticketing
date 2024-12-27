@@ -1,0 +1,43 @@
+{
+    "name": "The Lion King: Live on Stage",
+    "location": "Civic Center, San Francisco, CA",
+    "coords": {
+        "lat": 37.7749,
+        "lng": -122.4194
+    },
+    "dates": [
+        "June 10, 2024; 7:00 PM - 10:00 PM",
+        "June 11, 2024; 3:00 PM - 6:00 PM",
+        "June 12, 2024; 4:15 PM - 7:15 PM"
+    ],
+    "seat_count": [
+        1500,
+        1500,
+        1500
+    ],
+    "price": [
+        95,
+        100,
+        105
+    ],
+    "theme": "Family Musical",
+    "short_description": "The breathtaking adaptation of Disney's classic tale comes to life on stage.",
+    "long_description": "Embark on a journey to the African savannah with The Lion King, featuring stunning visuals, memorable music, and an unforgettable theatrical experience for all ages.",
+    "return_policy_specifics": "Non-refundable.",
+    "organizer_contact": "contact@sfmusicals.com",
+    "hashtags": [
+        "#TheLionKing",
+        "#SanFranciscoEvents",
+        "#FamilyMusical",
+        "#Disney",
+        "#MusicalTheater",
+        "#Theater",
+        "#BroadwayInSF",
+        "#HakunaMatata"
+    ],
+    "optional": {
+        "food_provided": "Available",
+        "age_restriction": null,
+        "number_of_tickets_per_buyer": 6
+    }
+}

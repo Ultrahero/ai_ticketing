@@ -1,0 +1,43 @@
+{
+    "name": "Fantasy Writers\u2019 Workshop",
+    "location": "Belladonna Creative Studio, Portland, OR",
+    "coords": {
+        "lat": 45.5051,
+        "lng": -122.6750
+    },
+    "dates": [
+        "July 5, 2024; 9:00 AM - 5:00 PM",
+        "July 6, 2024; 9:00 AM - 5:00 PM",
+        "July 7, 2024; 9:00 AM - 5:00 PM"
+    ],
+    "seat_count": [
+        30,
+        30,
+        30
+    ],
+    "price": [
+        200,
+        200,
+        200
+    ],
+    "theme": "Creative Writing",
+    "short_description": "A hands-on workshop for aspiring fantasy authors led by bestselling writers.",
+    "long_description": "Step into the realm of fantasy literature with this three-day intensive workshop, guided by some of the genre\u2019s most celebrated authors. Learn the art of world-building, character development, and storytelling. Attendees will have the chance to refine their craft through personalized feedback and engage in thought-provoking group discussions. The workshop concludes with a networking session and a chance to pitch your manuscript to industry professionals.",
+    "return_policy_specifics": "Cancellations made 7 days prior to the event will receive a 50% refund. No refunds for cancellations within 7 days.",
+    "organizer_contact": "events@writersguild.org",
+    "hashtags": [
+        "#CreativeWriting",
+        "#FantasyAuthors",
+        "#WritingWorkshop",
+        "#Storytelling",
+        "#WorldBuilding",
+        "#PortlandEvents",
+        "#AspiringWriters",
+        "#LiteraryEvent"
+    ],
+    "optional": {
+        "food_provided": "Not Available",
+        "age_recommendation": "16+",
+        "number_of_tickets_per_buyer": 2
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "name": "Historic Downtown Walking Tour",
+    "location": "Old Town, Philadelphia, PA",
+    "coords": {
+        "lat": 39.9526,
+        "lng": -75.1652
+    },
+    "dates": [
+        "May 12, 2024; 10:00 AM - 12:00 PM",
+        "May 13, 2024; 10:30 AM - 12:30 PM"
+    ],
+    "seat_count": [
+        30,
+        30
+    ],
+    "price": [
+        15,
+        15
+    ],
+    "theme": "Cultural Tour",
+    "short_description": "Discover the history of Philadelphia's Old Town on a guided walking tour.",
+    "long_description": "Join our expert guides as they take you on a journey through the historic streets of Old Town. Learn about the city's rich history, from colonial landmarks to hidden gems, in an engaging and informative experience.",
+    "return_policy_specifics": "Tickets are refundable up to 24 hours before the event.",
+    "organizer_contact": "tours@phillyoldtown.com",
+    "hashtags": [
+        "#WalkingTour",
+        "#HistoricPhilly",
+        "#CityExploration",
+        "#PhiladelphiaEvents",
+        "#CulturalHeritage",
+        "#GuidedTour",
+        "#LocalHistory",
+        "#HistoricSites"
+    ],
+    "optional": {
+        "food_provided": "Available",
+        "age_restriction": null,
+        "number_of_tickets_per_buyer": 4
+    }
+}

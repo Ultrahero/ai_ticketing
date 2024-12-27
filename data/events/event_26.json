@@ -1,0 +1,41 @@
+{
+    "name": "Bad Art Night",
+    "location": "Creative Chaos Studio, Austin, TX",
+    "coords": {
+        "lat": 30.2672,
+        "lng": -97.7431
+    },
+    "dates": [
+        "August 18, 2024; 7:00 PM - 9:00 PM",
+        "August 19, 2024; 7:00 PM - 9:00 PM"
+    ],
+    "seat_count": [
+        50,
+        50
+    ],
+    "price": [
+        20,
+        20
+    ],
+    "theme": "Art & Comedy",
+    "short_description": "Unleash your inner artist and compete to create the worst masterpiece!",
+    "long_description": "Join us for a night of laughter and creativity as participants compete to create intentionally terrible art. Vote for the worst masterpiece and win hilarious prizes! No art skills required, just bring your sense of humor.",
+    "return_policy_specifics": "Refundable up to 48 hours before the event.",
+    "organizer_contact": "info@creativechaos.com",
+    "hashtags": [
+        "#BadArtNight",
+        "#AustinEvents",
+        "#CreativeComedy",
+        "#ArtCompetition",
+        "#LaughOutLoud",
+        "#ArtAndComedy",
+        "#ArtLovers",
+        "#CreativeChaos",
+        "#WorstMasterpiece"
+    ],
+    "optional": {
+        "food_provided": null,
+        "age_restriction": null,
+        "number_of_tickets_per_buyer": null
+    }
+}

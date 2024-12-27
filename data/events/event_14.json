@@ -1,0 +1,47 @@
+{
+    "name": "Sunrise Hot Air Balloon Ride",
+    "location": "Sonoran Desert, Phoenix, AZ",
+    "coords": {
+        "lat": 33.4484,
+        "lng": -112.0740
+    },
+    "dates": [
+        "June 1, 2024; 5:00 AM - 8:00 AM",
+        "June 2, 2024; 5:00 AM - 8:00 AM",
+        "June 3, 2024; 5:00 AM - 8:00 AM"
+    ],
+    "seat_count": [
+        12,
+        12,
+        12
+    ],
+    "price": [
+        200,
+        200,
+        200
+    ],
+    "theme": "Adventure",
+    "short_description": "Take in breathtaking views of the desert on a sunrise hot air balloon ride.",
+    "long_description": "Experience the magic of the Sonoran Desert from above with a serene hot air balloon ride. Soar over stunning landscapes at sunrise and enjoy a champagne toast upon landing.",
+    "return_policy_specifics": "Refundable if canceled 72 hours in advance.",
+    "organizer_contact": "info@desertballoons.com",
+    "hashtags": [
+        "#HotAirBalloon",
+        "#DesertAdventure",
+        "#SunriseExperience",
+        "#Phoenix",
+        "#OutdoorActivity",
+        "#BucketList",
+        "#AdventureSeekers",
+        "#NatureLovers",
+        "#AerialViews",
+        "#ChampagneToast",
+        "#BalloonRide",
+        "#MorningDate"
+    ],
+    "optional": {
+        "food_provided": "Not Available",
+        "age_restriction": null,
+        "number_of_tickets_per_buyer": 2
+    }
+}

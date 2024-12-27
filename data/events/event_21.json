@@ -1,0 +1,45 @@
+{
+    "name": "Phantom of the Opera Revival",
+    "location": "Broadway Theater, New York City, NY",
+    "coords": {
+        "lat": 40.7128,
+        "lng": -74.0060
+    },
+    "dates": [
+        "March 15, 2024; 7:00 PM - 10:00 PM",
+        "March 16, 2024; 7:00 PM - 10:00 PM",
+        "March 17, 2024; 6:00 PM - 9:00 PM"
+    ],
+    "seat_count": [
+        1000,
+        1000,
+        1000
+    ],
+    "price": [
+        120,
+        130,
+        140
+    ],
+    "theme": "Classic Musical",
+    "short_description": "The timeless story returns to Broadway with a new cast and production.",
+    "long_description": "Witness the enchanting tale of love, mystery, and music as Phantom of the Opera returns to the stage. This revival features a stellar cast and breathtaking production that will captivate audiences of all ages.",
+    "return_policy_specifics": "Refundable up to 14 days before the event.",
+    "organizer_contact": "info@broadwaytheater.com",
+    "hashtags": [
+        "#PhantomOfTheOpera",
+        "#Broadway",
+        "#MusicalTheater",
+        "#Theater",
+        "#Opera",
+        "#NYCEvents",
+        "#ClassicMusical",
+        "#BroadwayRevival",
+        "#MusicLovers"
+
+    ],
+    "optional": {
+        "food_provided": "Available",
+        "age_restriction": "12+",
+        "number_of_tickets_per_buyer": null
+    }
+}

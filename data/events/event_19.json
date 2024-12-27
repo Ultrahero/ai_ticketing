@@ -1,0 +1,46 @@
+{
+    "name": "Gaming World Convention",
+    "location": "Expo Hall, Seattle, WA",
+    "coords": {
+        "lat": 47.6062,
+        "lng": -122.3321
+    },
+    "dates": [
+        "June 10, 2024; 9am - 6pm",
+        "June 11, 2024; 9am - 6pm",
+        "June 12, 2024; 9am - 6pm",
+        "June 13, 2024; 9am - 6pm"
+    ],
+    "seat_count": [
+        3000,
+        3000,
+        3000,
+        3000
+    ],
+    "price": [
+        60,
+        65,
+        70,
+        75
+    ],
+    "theme": "Gaming Industry",
+    "short_description": "The ultimate event for gamers and developers alike.",
+    "long_description": "Celebrate all things gaming at this four-day convention. Featuring exclusive game previews, developer talks, cosplay contests, and interactive experiences for all ages.",
+    "return_policy_specifics": "Non-refundable.",
+    "organizer_contact": "info@gamingworldcon.com",
+    "hashtags": [
+        "#GamingConvention",
+        "#SeattleEvents",
+        "#GamingIndustry",
+        "#VideoGames",
+        "#Cosplay",
+        "#Developers",
+        "#Gamers"
+
+    ],
+    "optional": {
+        "food_provided": "Available",
+        "age_restriction": null,
+        "number_of_tickets_per_buyer": null
+    }
+}

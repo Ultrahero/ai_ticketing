@@ -1,0 +1,37 @@
+{
+    "name": "Extreme Pillow Fight Championship",
+    "location": "The Arena, Denver, CO",
+    "coords": {
+        "lat": 39.7392,
+        "lng": -104.9903
+    },
+    "dates": [
+        "September 30, 2024; 7:00 PM - 10:00 PM"
+    ],
+    "seat_count": [
+        200
+    ],
+    "price": [
+        15
+    ],
+    "theme": "Funny Competition",
+    "short_description": "The most intense pillow fight competition you\u2019ll ever witness!",
+    "long_description": "Get ready for feathers to fly as competitors duke it out in the Extreme Pillow Fight Championship. With costumes, hilarious commentary, and dramatic slow-motion replays, this event promises endless laughs for all ages.",
+    "return_policy_specifics": "Tickets are non-refundable but transferable.",
+    "organizer_contact": "contact@pillowfight.com",
+    "hashtags": [
+        "#ExtremePillowFight",
+        "#DenverFun",
+        "#LaughAndPlay",
+        "#FunnyCompetition",
+        "#TheArena",
+        "#PillowFightChampionship",
+        "#FamilyFun",
+        "#ComedyEvent"
+    ],
+    "optional": {
+        "food_provided": "Available",
+        "age_restriction": null,
+        "number_of_tickets_per_buyer": 4
+    }
+}

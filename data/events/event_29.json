@@ -1,0 +1,42 @@
+{
+    "name": "TechNext 2024 Conference",
+    "location": "Silicon Valley Conference Center, San Jose, CA",
+    "coords": {
+        "lat": 37.7749,
+        "lng": -122.4194
+    },
+    "dates": [
+        "September 10, 2024; 9:00 AM - 5:00 PM",
+        "September 11, 2024; 9:00 AM - 5:00 PM",
+        "September 12, 2024; 9:00 AM - 5:00 PM"
+    ],
+    "seat_count": [
+        1000,
+        1000,
+        1000
+    ],
+    "price": [
+        150,
+        180,
+        200
+    ],
+    "theme": "Future of Technology",
+    "short_description": "The premier technology event showcasing the future of AI, blockchain, and robotics.",
+    "long_description": "Join global industry leaders, innovators, and enthusiasts at TechNext 2024, a three-day conference exploring cutting-edge advancements in technology. Sessions include keynote speeches from top tech executives, interactive panels on AI ethics, and live demonstrations of emerging tech. Network with peers and discover the tools shaping the future.",
+    "return_policy_specifics": "Tickets are transferable but non-refundable. Attendee substitutions are allowed up to 24 hours before the event.",
+    "organizer_contact": "contact@technextconf.com",
+    "hashtags": [
+        "#TechConference",
+        "#AI",
+        "#Blockchain",
+        "#Innovation",
+        "#SiliconValley",
+        "#FutureTech",
+        "#TechTrends"
+    ],
+    "optional": {
+        "food_provided": "Included",
+        "age_recommendation": "18+",
+        "number_of_tickets_per_buyer": null
+    }
+}

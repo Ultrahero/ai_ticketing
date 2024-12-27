@@ -1,0 +1,38 @@
+{
+    "name": "Taylor Harmony Live",
+    "location": "Sunset Arena, Los Angeles, CA",
+    "coords": {
+        "lat": 34.0522,
+        "lng": -118.2437
+    },
+    "dates": [
+        "August 15, 2024; 7pm - 11pm"
+    ],
+    "seat_count": [
+        5000
+    ],
+    "price": [
+        120
+    ],
+    "theme": "Pop Music Concert",
+    "short_description": "Taylor Harmony performs live, featuring her chart-topping hits and a pre-show by Rising Beats.",
+    "long_description": "Join Taylor Harmony for an unforgettable night of pop music at the Sunset Arena. Featuring her latest hits and a pre-show performance by Rising Beats, this event promises an evening filled with energy, emotion, and musical excellence.",
+    "return_policy_specifics": "Refundable up to 7 days before the event. No refunds afterward.",
+    "organizer_contact": "concerts@sunsetarena.com",
+    "hashtags": [
+        "#TaylorHarmonyLive",
+        "#PopMusic",
+        "#LosAngelesConcert",
+        "#LivePerformance",
+        "#RisingBeats",
+        "#SunsetArena",
+        "#MusicConcert",
+        "#PopStar",
+        "#ConcertExperience"
+    ],
+    "optional": {
+        "food_provided": "Available",
+        "age_restriction": "12+",
+        "number_of_tickets_per_buyer": null
+    }
+}

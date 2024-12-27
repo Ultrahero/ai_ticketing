@@ -1,0 +1,44 @@
+{
+    "name": "Renaissance Art Exhibit",
+    "location": "The Metropolitan Museum of Art, New York City, NY",
+    "coords": {
+        "lat": 40.7794,
+        "lng": -73.9632
+    },
+    "dates": [
+        "July 10, 2024; 10:00 AM - 6:00 PM",
+        "July 11, 2024; 9:00 AM - 6:00 PM",
+        "July 12, 2024; 9:00 AM - 6:00 PM"
+    ],
+    "seat_count": [
+        500,
+        500,
+        500
+    ],
+    "price": [
+        25,
+        25,
+        25
+    ],
+    "theme": "Historical Art",
+    "short_description": "Explore the timeless masterpieces of the Renaissance era.",
+    "long_description": "Step into the world of the Renaissance at The Met with an exhibit showcasing iconic works from artists like Leonardo da Vinci and Michelangelo. This curated collection includes rare pieces and detailed insights into the art and culture of the time.",
+    "return_policy_specifics": "Tickets are non-refundable but transferable.",
+    "organizer_contact": "info@metmuseum.org",
+    "hashtags": [
+        "#RenaissanceArt",
+        "#TheMet",
+        "#ArtExhibit",
+        "#HistoricalArt",
+        "#ArtLovers",
+        "#NYCArt",
+        "#ArtHistory",
+        "#LeonardoDaVinci",
+        "#Michelangelo"
+    ],
+    "optional": {
+        "food_provided": "Available",
+        "age_restriction": null,
+        "number_of_tickets_per_buyer": null
+    }
+}

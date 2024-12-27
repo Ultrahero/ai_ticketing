@@ -1,0 +1,38 @@
+{
+    "name": "Hamilton: A Musical Journey",
+    "location": "The Majestic Theater, Chicago, IL",
+    "coords": {
+        "lat": 41.8781,
+        "lng": -87.6298
+    },
+    "dates": [
+        "April 20, 2024; 7:00 PM - 10:00 PM",
+        "April 21, 2024; 7:00 PM - 10:00 PM"
+    ],
+    "seat_count": [
+        800,
+        800
+    ],
+    "price": [
+        150,
+        160
+    ],
+    "theme": "Historical Musical",
+    "short_description": "Lin-Manuel Miranda's groundbreaking musical comes to Chicago.",
+    "long_description": "Experience the revolutionary story of Alexander Hamilton told through an eclectic blend of hip-hop, jazz, and traditional musical theater. A performance that\u2019s as inspiring as it is entertaining.",
+    "return_policy_specifics": "Non-refundable but transferable.",
+    "organizer_contact": "tickets@majesticchicago.com",
+    "hashtags": [
+        "#Hamilton",
+        "#ChicagoEvents",
+        "#MusicalHistory",
+        "#Musical",
+        "#History",
+        "#Theater"
+    ],
+    "optional": {
+        "food_provided": null,
+        "age_restriction": null,
+        "number_of_tickets_per_buyer": 6
+    }
+}

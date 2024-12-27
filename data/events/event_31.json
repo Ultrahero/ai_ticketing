@@ -1,0 +1,38 @@
+{
+    "name": "Jazz Night at the Blue Note",
+    "location": "Blue Note Jazz Club, New York City, NY",
+    "coords": {
+        "lat": 40.7306,
+        "lng": -74.0006
+    },
+    "dates": [
+        "February 18, 2024; 8:00 PM - 11:00 PM"
+    ],
+    "seat_count": [
+        200
+    ],
+    "price": [
+        75
+    ],
+    "theme": "Live Jazz Performance",
+    "short_description": "An intimate evening of live jazz featuring world-class musicians.",
+    "long_description": "Spend a cozy night at the iconic Blue Note Jazz Club, where some of the finest jazz musicians perform live. This exclusive event promises a night filled with soulful tunes, delicious food, and a vibrant atmosphere.",
+    "return_policy_specifics": "Refundable until 24 hours before the event.",
+    "organizer_contact": "jazznights@bluenote.com",
+    "hashtags": [
+        "#LiveJazz",
+        "#JazzMusic",
+        "#BlueNote",
+        "#NightOut",
+        "#NYCEvents",
+        "#JazzNight",
+        "#MusicLovers",
+        "#JazzConcert",
+        "#WorldClassMusicians"
+    ],
+    "optional": {
+        "food_provided": "Available",
+        "age_restriction": "18+",
+        "number_of_tickets_per_buyer": 4
+    }
+}

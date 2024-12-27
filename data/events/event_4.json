@@ -1,0 +1,40 @@
+{
+    "name": "Acoustic Evenings",
+    "location": "Harmony Hall, Nashville, TN",
+    "coords": {
+        "lat": 36.1627,
+        "lng": -86.7816
+    },
+    "dates": [
+        "June 10, 2024; 6pm - 10pm",
+        "June 11, 2024; 7pm - 11pm"
+    ],
+    "seat_count": [
+        200,
+        200
+    ],
+    "price": [
+        30,
+        35
+    ],
+    "theme": "Live Acoustic Music",
+    "short_description": "An intimate evening of acoustic performances by talented singer-songwriters.",
+    "long_description": "Experience the magic of raw, unplugged music as talented singer-songwriters take the stage at Harmony Hall. Enjoy heartfelt performances in an intimate setting, perfect for music lovers seeking a soulful evening.",
+    "return_policy_specifics": "Refundable up to 24 hours before the event.",
+    "organizer_contact": "events@harmonymusic.com",
+    "hashtags": [
+        "#AcousticEvenings",
+        "#LiveMusic",
+        "#NashvilleEvents",
+        "#SingerSongwriters",
+        "#MusicLovers",
+        "#Unplugged",
+        "#IntimateConcert",
+        "#HarmonyHall"
+    ],
+    "optional": {
+        "food_provided": null,
+        "age_restriction": "12+",
+        "number_of_tickets_per_buyer": null
+    }
+}

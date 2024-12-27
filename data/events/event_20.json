@@ -1,0 +1,37 @@
+{
+    "name": "Health & Wellness Expo",
+    "location": "Community Center, San Diego, CA",
+    "coords": {
+        "lat": 32.7157,
+        "lng": -117.1611
+    },
+    "dates": [
+        "July 8, 2024; 9:00 AM - 5:00 PM",
+        "July 9, 2024; 9:00 AM - 5:00 PM"
+    ],
+    "seat_count": [
+        1500,
+        1500
+    ],
+    "price": [
+        50,
+        50
+    ],
+    "theme": "Health & Fitness",
+    "short_description": "Explore the latest trends in health and wellness at this two-day expo.",
+    "long_description": "Meet health experts, discover innovative fitness equipment, and learn about holistic wellness practices. The Health & Wellness Expo is your gateway to a healthier lifestyle.",
+    "return_policy_specifics": "Tickets are non-refundable.",
+    "organizer_contact": "expo@wellnesshub.com",
+    "hashtags": [
+        "#Health",
+        "#Wellness",
+        "#SanDiegoEvents",
+        "#Fitness",
+        "#HealthyLiving"
+    ],
+    "optional": {
+        "food_provided": null,
+        "age_restriction": null,
+        "number_of_tickets_per_buyer": null
+    }
+}

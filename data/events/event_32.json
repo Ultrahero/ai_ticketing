@@ -1,0 +1,39 @@
+{
+    "name": "Art Deco Walking Tour",
+    "location": "Downtown Miami, FL",
+    "coords": {
+        "lat": 25.7617,
+        "lng": -80.1918
+    },
+    "dates": [
+        "March 10, 2024",
+        "March 17, 2024"
+    ],
+    "seat_count": [
+        30,
+        30
+    ],
+    "price": [
+        20,
+        20
+    ],
+    "theme": "Architecture & History",
+    "short_description": "Discover Miami's Art Deco treasures on a guided walking tour.",
+    "long_description": "Explore the vibrant Art Deco architecture of Miami's historic district with an expert guide. Learn about the city's rich history and enjoy breathtaking views of iconic buildings. Perfect for architecture and history enthusiasts.",
+    "return_policy_specifics": "Tickets are non-refundable but transferable.",
+    "organizer_contact": "tours@artdecoguide.com",
+    "hashtags": [
+        "#ArtDeco",
+        "#MiamiTour",
+        "#HistoricMiami",
+        "#ArchitectureTour",
+        "#MiamiHistory",
+        "#WalkingTour",
+        "#MiamiEvents"
+    ],
+    "optional": {
+        "food_provided": "Not Available",
+        "age_recommendation": "12+",
+        "number_of_tickets_per_buyer": null
+    }
+}

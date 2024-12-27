@@ -1,0 +1,36 @@
+{
+    "name": "Evening Kayak Tour",
+    "location": "Lake Tahoe, NV",
+    "coords": {
+        "lat": 39.0968,
+        "lng": -120.0324
+    },
+    "dates": [
+        "July 15, 2024; 6:00 PM"
+    ],
+    "seat_count": [
+        20
+    ],
+    "price": [
+        50
+    ],
+    "theme": "Outdoor Adventure",
+    "short_description": "Paddle through Lake Tahoe\u2019s serene waters under the evening sky.",
+    "long_description": "Unwind with a guided kayak tour of Lake Tahoe at sunset. This relaxing adventure is perfect for nature enthusiasts, offering stunning views of the lake and surrounding mountains as the sun sets.",
+    "return_policy_specifics": "Non-refundable but transferable.",
+    "organizer_contact": "outdoors@laketahoekayak.com",
+    "hashtags": [
+        "#KayakTour",
+        "#LakeTahoe",
+        "#EveningAdventure",
+        "#OutdoorActivities",
+        "#NatureLovers",
+        "#SunsetTour",
+        "#NevadaEvents"
+    ],
+    "optional": {
+        "food_provided": null,
+        "age_restriction": "None",
+        "number_of_tickets_per_buyer": 4
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "name": "Rock Legends: Crimson Band",
+    "location": "Grand Stage, Chicago, IL",
+    "coords": {
+        "lat": 41.8781,
+        "lng": -87.6298
+    },
+    "dates": [
+        "October 20, 2024; 8:00 PM - 11:00 PM",
+        "October 21, 2024; 7:30 PM - 10:30 PM"
+    ],
+    "seat_count": [
+        7000,
+        7000
+    ],
+    "price": [
+        150,
+        160
+    ],
+    "theme": "Rock Music Concert",
+    "short_description": "Crimson Band live with a special opening act by The Electric Strings.",
+    "long_description": "Witness the legendary Crimson Band live at the Grand Stage for two unforgettable nights. Featuring a special opening act by The Electric Strings, this concert brings the iconic rock sound to life for fans old and new.",
+    "return_policy_specifics": "Non-refundable but transferable. Name changes allowed up to 48 hours prior.",
+    "organizer_contact": "info@grandstageconcerts.com",
+    "hashtags": [
+        "#CrimsonBand",
+        "#RockConcert",
+        "#ChicagoMusic",
+        "#RockLegends",
+        "#ElectricStrings",
+        "#GrandStage",
+        "#LiveMusic",
+        "#RockMusic",
+        "#MusicFans"
+    ],
+    "optional": {
+        "food_provided": "Available",
+        "age_restriction": null,
+        "number_of_tickets_per_buyer": null
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "name": "Modern Sculptures Showcase",
+    "location": "Museum of Contemporary Art, Los Angeles, CA",
+    "coords": {
+        "lat": 34.0544,
+        "lng": -118.2508
+    },
+    "dates": [
+        "August 5, 2024; 10:00 AM - 6:00 PM",
+        "August 6, 2024; 10:00 AM - 6:00 PM"
+    ],
+    "seat_count": [
+        300,
+        300
+    ],
+    "price": [
+        20,
+        25
+    ],
+    "theme": "Contemporary Art",
+    "short_description": "Discover the bold and innovative sculptures redefining art today.",
+    "long_description": "The Museum of Contemporary Art invites you to explore the creativity and ingenuity of modern sculpture. Featuring works by groundbreaking artists, this exhibit challenges conventional norms and inspires new perspectives.",
+    "return_policy_specifics": "Refundable up to 48 hours before the event.",
+    "organizer_contact": "tickets@moca.org",
+    "hashtags": [
+        "#ModernSculptures",
+        "#ContemporaryArt",
+        "#MOCA",
+        "#ArtExhibit",
+        "#SculptureShowcase",
+        "#ArtInnovation",
+        "#ArtLovers",
+        "#LosAngelesArt",
+        "#ModernArtists"
+    ],
+    "optional": {
+        "food_provided": null,
+        "age_restriction": null,
+        "number_of_tickets_per_buyer": null
+    }
+}

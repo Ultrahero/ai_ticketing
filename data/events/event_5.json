@@ -1,0 +1,44 @@
+{
+    "name": "Jazz & Blues Festival",
+    "location": "Downtown Plaza, New Orleans, LA",
+    "coords": {
+        "lat": 29.9511,
+        "lng": -90.0715
+    },
+    "dates": [
+        "March 15, 2024; 11am - 10pm",
+        "March 16, 2024; 11am - 10pm",
+        "March 17, 2024; 11am - 6pm"
+    ],
+    "seat_count": [
+        500,
+        500,
+        500
+    ],
+    "price": [
+        50,
+        55,
+        60
+    ],
+    "theme": "Jazz & Blues",
+    "short_description": "A weekend celebration of jazz and blues featuring legendary artists.",
+    "long_description": "Immerse yourself in the soulful rhythms of jazz and blues at the Downtown Plaza. This three-day festival brings together legendary artists, local talent, and an unforgettable atmosphere in the heart of New Orleans.",
+    "return_policy_specifics": "Tickets are non-refundable but transferable.",
+    "organizer_contact": "info@jazzbluesfest.com",
+    "hashtags": [
+        "#JazzBluesFest",
+        "#NewOrleans",
+        "#LiveJazz",
+        "#BluesMusic",
+        "#MusicFestival",
+        "#JazzLegends",
+        "#BluesArtists",
+        "#NOLAEvents",
+        "#LiveMusic"
+    ],
+    "optional": {
+        "food_provided": null,
+        "age_restriction": null,
+        "number_of_tickets_per_buyer": null
+    }
+}

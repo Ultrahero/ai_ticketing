@@ -1,0 +1,41 @@
+{
+    "name": "Coding for Kids Bootcamp",
+    "location": "TechSpace Labs, San Diego, CA",
+    "coords": {
+        "lat": 32.7157,
+        "lng": 117.1611
+    },
+    "dates": [
+        "July 1, 2024; 9:00 AM - 3:00 PM",
+        "July 2, 2024; 9:00 AM - 3:00 PM",
+        "July 3, 2024; 9:00 AM - 3:00 PM"
+    ],
+    "seat_count": [
+        20,
+        20,
+        20
+    ],
+    "price": [
+        100,
+        100,
+        100
+    ],
+    "theme": "Tech Education",
+    "short_description": "A beginner-friendly bootcamp introducing kids to coding basics.",
+    "long_description": "This three-day bootcamp is designed to teach kids the foundations of programming in a fun and engaging environment. With experienced instructors and interactive projects, kids will gain valuable tech skills.",
+    "return_policy_specifics": "Full refund up to 48 hours before the event.",
+    "organizer_contact": "info@techspacekids.com",
+    "hashtags": [
+        "#KidsCoding",
+        "#STEM",
+        "#TechForKids",
+        "#Educational",
+        "#GameDevelopment",
+        "#CodingBootcamp"
+    ],
+    "optional": {
+        "food_provided": "Available",
+        "age_restriction": "8+",
+        "number_of_tickets_per_buyer": 2
+    }
+}

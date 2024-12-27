@@ -1,0 +1,42 @@
+{
+    "name": "Photography Basics Workshop",
+    "location": "Studio Light, Seattle, WA",
+    "coords": {
+        "lat": 47.6062,
+        "lng": -122.3321
+    },
+    "dates": [
+        "April 5, 2024; 9:00 AM - 12:00 PM",
+        "April 6, 2024; 9:00 AM - 12:00 PM",
+        "April 7, 2024; 9:00 AM - 12:00 PM"
+    ],
+    "seat_count": [
+        20,
+        20,
+        20
+    ],
+    "price": [
+        150,
+        150,
+        150
+    ],
+    "theme": "Photography Education",
+    "short_description": "A beginner-friendly workshop on mastering photography basics.",
+    "long_description": "Learn the fundamentals of photography, from understanding camera settings to composing stunning shots. Led by a professional photographer, this hands-on workshop is perfect for hobbyists and aspiring professionals alike.",
+    "return_policy_specifics": "Cancellations 72 hours before the event receive a 50% refund.",
+    "organizer_contact": "workshops@studiolight.com",
+    "hashtags": [
+        "#PhotographyWorkshop",
+        "#LearnPhotography",
+        "#SeattleEvents",
+        "#PhotographyBasics",
+        "#CameraSettings",
+        "#Composition",
+        "#PhotographyTips"
+    ],
+    "optional": {
+        "food_provided": "Available",
+        "age_restriction": "14+",
+        "number_of_tickets_per_buyer": 3
+    }
+}

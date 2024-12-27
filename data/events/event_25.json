@@ -1,0 +1,38 @@
+{
+    "name": "World's Slowest Race",
+    "location": "Turtle Park, Orlando, FL",
+    "coords": {
+        "lat": 28.5383,
+        "lng": -81.3792
+    },
+    "dates": [
+        "July 1, 2024; 10:00 AM - 12:00 PM"
+    ],
+    "seat_count": [
+        100
+    ],
+    "price": [
+        5
+    ],
+    "theme": "Humorous Outdoor Event",
+    "short_description": "Join the fun as participants race to be the slowest to cross the finish line.",
+    "long_description": "Experience the hilarity of the World's Slowest Race, where the goal is to be the last to cross the finish line\u2014without stopping! Watch competitors take their time and enjoy quirky commentary from our hilarious host.",
+    "return_policy_specifics": "Tickets are non-refundable.",
+    "organizer_contact": "events@slowestrace.com",
+    "hashtags": [
+        "#WorldsSlowestRace",
+        "#OrlandoFun",
+        "#LaughOutLoud",
+        "#OutdoorEvent",
+        "#TurtlePark",
+        "#SlowAndSteady",
+        "#RaceToTheFinish",
+        "#ComedyEvent",
+        "#FamilyFun"
+    ],
+    "optional": {
+        "food_provided": null,
+        "age_restriction": null,
+        "number_of_tickets_per_buyer": null
+    }
+}

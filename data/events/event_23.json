@@ -1,0 +1,47 @@
+{
+    "name": "Wicked: The Untold Story",
+    "location": "Pantages Theater, Los Angeles, CA",
+    "coords": {
+        "lat": 34.1015,
+        "lng": -118.3319
+    },
+    "dates": [
+        "May 5, 2024; 7:00 PM - 10:00 PM",
+        "May 6, 2024; 7:00 PM - 10:00 PM",
+        "May 7, 2024; 6:00 PM - 9:00 PM",
+        "May 8, 2024; 6:00 PM - 9:00 PM"
+    ],
+    "seat_count": [
+        1200,
+        1200,
+        1200,
+        1200
+    ],
+    "price": [
+        110,
+        115,
+        120,
+        125
+    ],
+    "theme": "Fantasy Musical",
+    "short_description": "Discover the untold story of the witches of Oz in this beloved production.",
+    "long_description": "Step into the magical world of Oz with Wicked, the captivating story of friendship, power, and the paths we choose. A must-see musical that has captivated millions worldwide.",
+    "return_policy_specifics": "Refundable up to 10 days before the event.",
+    "organizer_contact": "events@pantagesla.com",
+    "hashtags": [
+        "#WickedMusical",
+        "#LosAngeles",
+        "#FantasyTheater",
+        "#Musical",
+        "#Theater",
+        "#Oz",
+        "#BroadwayInLA",
+        "#Magic",
+        "#Witches"
+    ],
+    "optional": {
+        "food_provided": "Available",
+        "age_recommendation": "10+",
+        "number_of_tickets_per_buyer": 8
+    }
+}

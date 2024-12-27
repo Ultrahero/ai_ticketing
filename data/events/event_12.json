@@ -1,0 +1,52 @@
+{
+    "name": "Ancient Egypt Wonders",
+    "location": "Field Museum, Chicago, IL",
+    "coords": {
+        "lat": 41.8663,
+        "lng": -87.6168
+    },
+    "dates": [
+        "September 20, 2024; 9:00 AM - 13:00 PM",
+        "September 20, 2024; 15:00 AM - 18:00 PM",
+        "September 21, 2024; 9:00 AM - 13:00 PM",
+        "September 21, 2024; 15:00 AM - 18:00 PM",
+        "September 22, 2024; 9:00 AM - 13:00 PM",
+        "September 23, 2024; 15:00 AM - 18:00 PM"
+    ],
+    "seat_count": [
+        400,
+        400,
+        400,
+        400,
+        400,
+        400
+    ],
+    "price": [
+        30,
+        35,
+        35,
+        40,
+        40,
+        45
+    ],
+    "theme": "Historical Archaeology",
+    "short_description": "A journey through the treasures of Ancient Egypt.",
+    "long_description": "Uncover the secrets of Ancient Egypt at the Field Museum. This exhibit features artifacts, mummies, and replicas of iconic monuments, offering a deep dive into one of the world's most fascinating civilizations.",
+    "return_policy_specifics": "Tickets are non-refundable.",
+    "organizer_contact": "events@fieldmuseum.org",
+    "hashtags": [
+        "#AncientEgypt",
+        "#FieldMuseum",
+        "#ChicagoEvents",
+        "#Archaeology",
+        "#History",
+        "#EgyptianArtifacts",
+        "#Mummies",
+        "#HistoricalExhibit"
+    ],
+    "optional": {
+        "food_provided": "Available",
+        "age_restriction": null,
+        "number_of_tickets_per_buyer": 5
+    }
+}

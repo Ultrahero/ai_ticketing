@@ -1,0 +1,41 @@
+{
+    "name": "Stage Lighting Expo",
+    "location": "Convention Center, Las Vegas, NV",
+    "coords": {
+        "lat": 36.1699,
+        "lng": -115.1398
+    },
+    "dates": [
+        "March 1, 2024; 10am - 6pm",
+        "March 2, 2024; 10am - 6pm"
+    ],
+    "seat_count": [
+        1000,
+        1000
+    ],
+    "price": [
+        100,
+        120
+    ],
+    "theme": "Event Production",
+    "short_description": "Discover the latest innovations in stage lighting and event technology.",
+    "long_description": "Join professionals from the entertainment and events industry for a two-day expo featuring cutting-edge stage lighting equipment, live demos, and workshops led by industry leaders.",
+    "return_policy_specifics": "Refundable up to 14 days before the event.",
+    "organizer_contact": "expo@stagelighting.com",
+    "hashtags": [
+        "#StageLightingExpo",
+        "#EventProduction",
+        "#LasVegas",
+        "#LightingDesign",
+        "#EventTech",
+        "#LiveEvents",
+        "#AudioTech",
+        "#VisualEffects",
+        "#LightingInnovation"
+    ],
+    "optional": {
+        "food_provided": null,
+        "age_restriction": "16+",
+        "number_of_tickets_per_buyer": null
+    }
+}

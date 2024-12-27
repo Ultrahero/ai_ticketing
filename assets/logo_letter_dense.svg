@@ -1,0 +1,24 @@
+<svg width="106" height="106" viewBox="0 0 106 106" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Logo - Letter, Dense">
+<g clip-path="url(#clip0_221_3461)">
+<g id="Shape with text">
+<rect id="Shape" width="106" height="53" rx="3" fill="#E4CCFF"/>
+</g>
+<g id="Shape with text_2">
+<rect id="Shape_2" y="53" width="106" height="53" rx="3" fill="#FFCD29"/>
+</g>
+<g id="Shape with text_3">
+<rect id="Shape_3" y="21" width="53" height="85" rx="3" fill="#FFCD29"/>
+</g>
+<g id="Shape with text_4">
+<rect id="Shape_4" x="53" y="21" width="53" height="64" rx="3" fill="#E4CCFF"/>
+</g>
+<path id="T" d="M40.7333 85V82.12C41.6293 82.12 42.9093 82.024 44.5733 81.832C46.2373 81.64 47.7733 81.224 49.1813 80.584V22.024H29.1172C28.5413 24.136 28.0933 26.184 27.7733 28.168C27.4533 30.152 27.1333 32.104 26.8133 34.024H23.7413V17.128H83.0693L80.5733 34.312L77.5973 34.024C77.6613 32.168 77.6933 30.248 77.6933 28.264C77.6933 26.28 77.5333 24.2 77.2133 22.024H57.5333V80.584C59.0053 81.224 60.5413 81.64 62.1413 81.832C63.8053 82.024 65.0853 82.12 65.9813 82.12V85H40.7333Z" fill="#1E1E1E"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_221_3461">
+<rect width="106" height="106" rx="21" fill="white"/>
+</clipPath>
+</defs>
+</svg>

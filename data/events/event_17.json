@@ -1,0 +1,40 @@
+{
+    "name": "Wedding Planners\u2019 Convention",
+    "location": "Grand Hotel, Miami, FL",
+    "coords": {
+        "lat": 25.7617,
+        "lng": -80.1918
+    },
+    "dates": [
+        "April 5, 2024; 9:00 AM - 17:00 PM",
+        "April 6, 2024; 9:00 AM - 17:00 PM"
+    ],
+    "seat_count": [
+        500,
+        500
+    ],
+    "price": [
+        150,
+        150
+    ],
+    "theme": "Wedding Planning",
+    "short_description": "The ultimate event for wedding professionals to network and learn.",
+    "long_description": "Meet top wedding planners and vendors at this exclusive convention. Learn from industry experts, explore new trends, and connect with professionals to elevate your wedding business.",
+    "return_policy_specifics": "Non-refundable but transferable.",
+    "organizer_contact": "convention@weddingpros.com",
+    "hashtags": [
+        "#WeddingConvention",
+        "#MiamiEvents",
+        "#WeddingPlanners",
+        "#WeddingVendors",
+        "#Networking",
+        "#WeddingBusiness",
+        "#EventPlanning",
+        "#WeddingTrends"
+    ],
+    "optional": {
+        "food_provided": "Available",
+        "age_restriction": null,
+        "number_of_tickets_per_buyer": 4
+    }
+}

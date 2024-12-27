@@ -1,0 +1,41 @@
+{
+    "name": "Winter Wonderland Market",
+    "location": "Snowy Village Square, Aspen, CO",
+    "coords": {
+        "lat": 39.1911,
+        "lng": -106.8175
+    },
+    "dates": [
+        "December 20, 2024; 11:00 AM - 6:00 PM",
+        "December 21, 2024; 11:00 AM - 6:00 PM",
+        "December 22, 2024; 11:00 AM - 6:00 PM"
+    ],
+    "seat_count": [
+        null
+    ],
+    "price": [
+        0,
+        0,
+        0
+    ],
+    "theme": "Holiday Market",
+    "short_description": "Shop, eat, and enjoy festive cheer at Aspen\u2019s winter market.",
+    "long_description": "Celebrate the season at Winter Wonderland Market with local vendors, festive food, and holiday performances. A perfect outing for the whole family!",
+    "return_policy_specifics": "Not applicable.",
+    "organizer_contact": "info@wonderlandmarket.com",
+    "hashtags": [
+        "#HolidayMarket",
+        "#AspenEvents",
+        "#WinterWonderland",
+        "#HolidayShopping",
+        "#FamilyFun",
+        "#FestiveFood",
+        "#LocalVendors",
+        "#HolidayPerformances"
+    ],
+    "optional": {
+        "food_provided": "Available",
+        "age_restriction": null,
+        "number_of_tickets_per_buyer": null
+    }
+}

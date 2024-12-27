@@ -1,0 +1,38 @@
+{
+    "name": "Indie Rock Night",
+    "location": "The Sound Cave, Seattle, WA",
+    "coords": {
+        "lat": 47.6062,
+        "lng": -122.3321
+    },
+    "dates": [
+        "July 25, 2024; 8:00 PM - 11:00 PM"
+    ],
+    "seat_count": [
+        300
+    ],
+    "price": [
+        40
+    ],
+    "theme": "Indie Rock",
+    "short_description": "An electrifying night of indie rock performances by emerging bands.",
+    "long_description": "Discover the future of indie rock with performances by the most promising up-and-coming bands at The Sound Cave. This one-night event is a must for music enthusiasts and indie fans alike.",
+    "return_policy_specifics": "Non-refundable but transferable.",
+    "organizer_contact": "tickets@soundcave.com",
+    "hashtags": [
+        "#IndieRock",
+        "#LiveMusic",
+        "#SeattleEvents",
+        "#EmergingArtists",
+        "#MusicScene",
+        "#RockConcert",
+        "#MusicLovers",
+        "#TheSoundCave",
+        "#IndieBands"
+    ],
+    "optional": {
+        "food_provided": "Not Available",
+        "age_restriction": null,
+        "number_of_tickets_per_buyer": null
+    }
+}

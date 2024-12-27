@@ -1,0 +1,42 @@
+{
+    "name": "Tech Innovators Summit",
+    "location": "TechPark, Austin, TX",
+    "coords": {
+        "lat": 30.2672,
+        "lng": -97.7431
+    },
+    "dates": [
+        "May 20, 2024; 11 AM - 6 PM",
+        "May 21, 2024; 9 AM - 5 PM",
+        "May 22, 2024; 9 AM - 4 PM"
+    ],
+    "seat_count": [
+        2000,
+        2000,
+        2000
+    ],
+    "price": [
+        250,
+        275,
+        300
+    ],
+    "theme": "Technology & Innovation",
+    "short_description": "A global gathering of tech pioneers and startups.",
+    "long_description": "Join the brightest minds in technology for three days of innovation, networking, and inspiration. The summit features keynote speeches, panel discussions, and startup showcases.",
+    "return_policy_specifics": "Refundable up to 30 days before the event.",
+    "organizer_contact": "summit@techinnovators.com",
+    "hashtags": [
+        "#TechSummit",
+        "#Innovation",
+        "#AustinEvents",
+        "#TechStartups",
+        "#FutureTech",
+        "#GlobalTech",
+        "#BigIdeas"
+    ],
+    "optional": {
+        "food_provided": "Available",
+        "age_restriction": null,
+        "number_of_tickets_per_buyer": null
+    }
+}
