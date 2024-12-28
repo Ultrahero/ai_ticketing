@@ -362,8 +362,12 @@ def search_events(request: SearchRequest = Depends()):
     beta = 0.3
 
     final_scores = [
-        search * alpha + loc * beta for search, loc in zip(np.linalg.norm(search_similarities, ord=1), np.linalg.norm(location_scores, ord=1))
+        np.array(search) * alpha + np.array(loc) * beta for search, loc in zip(
+            (search_similarities/np.linalg.norm(search_similarities, ord=1)).tolist(), 
+            (np.array(location_scores)/np.linalg.norm(location_scores, ord=1)).tolist()
+        )
     ]
+    final_scores = [s.tolist() for s in final_scores]
 
     # Rank and return events
     ranked_events = sorted(
@@ -410,8 +414,12 @@ def explore_events(request: ExploreRequest = Depends()):
     beta = 0.3
 
     final_scores = [
-        user * alpha + loc * beta for user, loc in zip(np.linalg.norm(topic_similarities.sum(axis=0), ord=1), np.linalg.norm(location_scores, ord=1))
+        np.array(user) * alpha + np.array(loc) * beta for user, loc in zip(
+            (topic_similarities/np.linalg.norm(topic_similarities.sum(axis=0), ord=1)).tolist(),
+            (np.array(location_scores)/np.linalg.norm(location_scores, ord=1)).tolist()
+        )
     ]
+    final_scores = [s.tolist() for s in final_scores]
 
     # Rank and return events
     ranked_events = sorted(
@@ -444,8 +452,12 @@ def get_recommendations(location: LocationRequest = Depends()):
     beta = 0.3
 
     final_scores = [
-        user * alpha + loc * beta for user, loc in zip(np.linalg.norm(user_similarities, ord=1), np.linalg.norm(location_scores, ord=1))
+        np.array(user) * alpha + np.array(loc) * beta for user, loc in zip(
+            (user_similarities/np.linalg.norm(user_similarities, ord=1)).tolist(), 
+            (np.array(location_scores)/np.linalg.norm(location_scores, ord=1)).tolist())
     ]
+
+    final_scores = [s.tolist() for s in final_scores]
 
     # Rank and return events
     ranked_events = sorted(
@@ -525,10 +537,14 @@ def search_events_user(request: SearchRequest = Depends(), user:User = Depends(g
 
     # Combine scores (weights: similarity 70%, location 30%)
     final_scores = [
-        user * alpha + search*beta +  loc * gamma for user, search, loc in zip(np.linalg.norm(user_similarities, ord=1),np.linalg.norm( search_similarities, ord=1), np.linalg.norm(location_scores, ord=1))
+        np.array(user) * alpha + np.array(search)*beta +  np.array(loc) * gamma for user, search, loc in zip(
+                (user_similarities/np.linalg.norm(user_similarities, ord=1)).tolist(),
+                (search_similarities/np.linalg.norm( search_similarities, ord=1)).tolist(),
+                (np.array(location_scores)/ np.linalg.norm(location_scores, ord=1)).tolist()
+            )
     ]
 
-
+    final_scores = [s.tolist() for s in final_scores]
     # Rank and return events
     ranked_events = sorted(
         zip(final_scores, events), key=lambda x: x[0], reverse=True
@@ -586,9 +602,12 @@ def explore_events_user(request:ExploreRequest = Depends(), user:User = Depends(
     beta = 0.3
 
     final_scores = [
-        user * alpha + loc * beta for user, loc in zip(np.linalg.norm(user_similarities, ord=1), np.linalg.norm(location_scores, ord=1))
+        np.array(user) * alpha + np.array(loc) * beta for user, loc in zip(
+            (user_similarities/np.linalg.norm(user_similarities, ord=1)).tolist(), 
+            (np.array(location_scores)/np.linalg.norm(location_scores, ord=1).tolist())
+        )
     ]
-
+    final_scores = [s.tolist() for s in final_scores]
     # Rank and return events
     ranked_events = sorted(
         zip(final_scores, selected_events), key=lambda x: x[0], reverse=True
@@ -622,9 +641,12 @@ def get_recommendations_user(location:LocationRequest = Depends(), user:User = D
     # Combine scores (weights: similarity 70%, location 30%)
 
     final_scores = [
-        user * alpha + loc * beta for user, loc in zip(np.linalg.norm(user_similarities, ord=1), np.linalg.norm(location_scores, ord=1))
+        np.array(user) * alpha + np.array(loc) * beta for user, loc in zip(
+            (user_similarities/np.linalg.norm(user_similarities, ord=1)).tolist(), 
+            (np.array(location_scores)/np.linalg.norm(location_scores, ord=1)).tolist()
+        )
     ]
-
+    final_scores = [s.tolist() for s in final_scores]
     # Rank and return events
     ranked_events = sorted(
         zip(final_scores, events), key=lambda x: x[0], reverse=True
