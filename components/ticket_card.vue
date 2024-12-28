@@ -1,17 +1,25 @@
 <template>
-    <v-card>
-        <v-card-title>{{ ticket.title }}</v-card-title>
-        <v-card-subtitle>ID: {{ ticket.id }}</v-card-subtitle>
+    <v-card class="d-flex flex-column">
+        <div>
+        <v-card-title>{{ ticket.name }}</v-card-title>
+        
         <v-card-text>
-            <div>Price: {{ ticket.price }}</div>
-            <div>Time: {{ ticket.time }}</div>
-            <div>Place: {{ ticket.place }}</div>
-            <div>{{ ticket.short_description }}</div>
+            <span>{{ ticket.short_description }}</span>
         </v-card-text>
-        <v-card-actions>
-            <nuxt-link :to="'/ticket/' + ticket.id"><v-btn>View</v-btn></nuxt-link>
+        </div>
+        <v-spacer></v-spacer>
+        <div>
+        <v-card-text>
+            <div>Time: {{ times }}</div>
+            <div>Location: {{ ticket.location }}</div>
+            <div>Price: from {{ min_price }}</div>
+        </v-card-text>
+        <v-card-actions class="d-flex flex-row align-center">
+            <nuxt-link :to="'/events/' + ticket.id"><v-btn>View</v-btn></nuxt-link>
+            <v-spacer></v-spacer>
             <v-btn @click="$emit('add-to-cart', ticket)">Add to Cart</v-btn>
         </v-card-actions>
+        </div>
     </v-card>
 </template>
 
@@ -24,13 +32,22 @@ export default {
             type: Object,
             required: true,
             default: () => ({
-                title: '',
+                name: '',
                 price: '',
                 id: '',
-                time: '',
-                place: '',
+                dates: '',
+                location: '',
                 short_description: ''
             })
+        }
+    },
+    computed: {
+        times() {
+            return (this.ticket.dates[0].split(";")[0] + " - " + this.ticket.dates[this.ticket.dates.length-1].split(";")[0]).toString()
+            // return "Monday"
+        },
+        min_price() {
+            return Math.min(parseFloat(...this.ticket.price));
         }
     },
 }

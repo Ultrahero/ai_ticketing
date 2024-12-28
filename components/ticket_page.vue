@@ -17,14 +17,15 @@ export default {
             type: Array,
             required: true
         }
-    }
+    },
+    emits: ['add-to-cart']
 }
 </script>
 
 <style scoped>
 .ticket-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 16px;
 }
 

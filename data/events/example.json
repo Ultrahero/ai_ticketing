@@ -13,7 +13,7 @@
     "long_description": "LONG DESCRIPTION",
     "return_policy_specifics": "RETURN POLICY",
     "organizer_contact": "E@MAIL.com",
-    "hashtags": [1,10],
+    "hashtags": [],
     "optional": {
         "food_provided": ["Provided","Available","Not Available"],
         "age_restriction": "X+",
