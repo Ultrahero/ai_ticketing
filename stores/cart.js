@@ -19,11 +19,17 @@ export const useCartStore = defineStore("cart", {
     },
     events : (state) => {
         return state.availableEvents;
-    }
+    },
+    items: (state) => {
+        return state.cart;
+    },
+    count: (state) => {
+        return state.cart.length;
+    },
   },
   actions: {
     // Add an event to the cart
-    addEvent(event, dateIndex, quantity) {
+    addEvent({event, dateIndex, quantity}) {
       const date = event.dates[dateIndex];
       const price = event.price[dateIndex];
 
@@ -43,19 +49,21 @@ export const useCartStore = defineStore("cart", {
           location: event.location,
           price,
           quantity,
+          id: event.id,
+          description: event.short_description,
         });
       }
     },
     // Remove an event from the cart
-    removeEvent(eventName, date) {
+    removeItem(name, date) {
         this.cart = this.cart.filter(
-        (item) => !(item.name === eventName && item.date === date)
+        (item) => !(item.name === name && item.date === date)
       );
     },
     // Update the quantity of an event in the cart
-    updateQuantity(eventName, date, quantity) {
+    updateQuantity(name, date, quantity) {
       const item = this.cart.find(
-        (item) => item.name === eventName && item.date === date
+        (item) => item.name === name && item.date === date
       );
 
       if (item) {
@@ -63,16 +71,13 @@ export const useCartStore = defineStore("cart", {
 
         // Remove the item if quantity is set to 0
         if (item.quantity <= 0) {
-          this.removeEvent(eventName, date);
+          this.removeEvent(name, date);
         }
       }
     },
     // Clear the cart
     clearCart() {
         this.cart = [];
-    },
-    count(){
-        return this.cart.length;
     },
     async fetchEvents(){
         return axiosInstance.get("/events").then((response) => {

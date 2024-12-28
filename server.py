@@ -10,6 +10,7 @@ import os
 import argparse
 import subprocess
 import time
+import re
 
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
@@ -54,12 +55,23 @@ class NumpyResponse(JSONResponse):
 ######################################################################################
 
 class SearchRequest(BaseModel):
-    keywords: str
+    query: str
     lat: float = 38.89511
     long: float = -77.03637
-    threshold: float = 0.3 #threshold to cut off the search results
+    combined_threshold: float = 0.3 #threshold to cut off the search results
+    individual_threshold: float= 0.048 #minimum threshold to consider an event, individual similarity
     start_index: int=0 #start index to return
     end_index: int=50 #end index to return, by default quite high, so that the user can scroll through the results
+
+class ExploreRequest(BaseModel):
+    query: str
+    lat: float = 38.89511
+    long: float = -77.03637
+    combined_threshold: float = 0.6 #threshold to cut off the search results
+    individual_threshold: float= 0.3 #minimum threshold to consider an event, individual similarity
+    start_index: int=0 #start index to return
+    end_index: int=50 #end index to return, by default quite high, so that the user can scroll through the results
+
 class LocationRequest(BaseModel):
     #default location is washington dc
     lat: float = 38.89511
@@ -67,14 +79,10 @@ class LocationRequest(BaseModel):
     start_index: int=0 #start index to return
     end_index: int=50 #end index to return, by default quite high, so that the user can scroll through the results
 
-class ExploreRequest(BaseModel):
-    topics: List[str]
-    lat: float = 38.89511
-    long: float = -77.03637
-    threshold: float = 0.5 #similarity threshold to the selected topics
-    start_index: int = 0 #start index to return
-    end_index: int = 50 #end index to return, by default quite high, so that the user can scroll through the results
-
+class GetTypesRequest(BaseModel):
+    events: List[Dict[str, Any]]
+    types: List[str]
+    other_threshold: float = 0.0
 
 ######################################################################################
 #                                 EVENT HANDLING                                     #
@@ -341,7 +349,7 @@ def get_nearby_events(location: LocationRequest = Depends()):
 
 @app.get("/search")#same as /user/search but without the user stuff
 def search_events(request: SearchRequest = Depends()):
-    search_embedding = model.encode(request.keywords)
+    search_embedding = model.encode(request.query)
     search_similarities = cosine_similarity([search_embedding], event_embeddings)[0]
 
     # Adjust for location
@@ -354,7 +362,7 @@ def search_events(request: SearchRequest = Depends()):
         for e in events
     ]
     #remove the events with more than 5000 km distance
-    user_similarities = np.array([user_similarities[i] for i, score in enumerate(location_scores) if score < 1])
+    search_similarities = np.array([search_similarities[i] for i, score in enumerate(location_scores) if score < 1])
     location_scores = [score for score in location_scores if score < 1]
 
     # Combine scores (weights: similarity 70%, location 30%)
@@ -375,7 +383,7 @@ def search_events(request: SearchRequest = Depends()):
     )
 
     #only return certain percentage by score of the events
-    threshold = request.threshold
+    threshold = request.combined_threshold
     total_score = sum([score for score, _ in ranked_events])
     current_score = 0
     threshold_event = 0
@@ -387,15 +395,19 @@ def search_events(request: SearchRequest = Depends()):
             break
     ranked_events = ranked_events[:threshold_event+1]
 
+    #now only consider events with inidivual similarity above the minimum threshold
+    ranked_events = [(score, event) for score, event in ranked_events if score >= request.individual_threshold]
+
     return NumpyResponse({"events": [{"event": e, "score": s} for s, e in ranked_events]})
 
 @app.get("/explore")
 def explore_events(request: ExploreRequest = Depends()):
-    topic_embeddings = model.encode(request.topics)
+    topics = re.split(r"[,; ]+", request.query)
+    topic_embeddings = model.encode(topics)
     topic_similarities = cosine_similarity(topic_embeddings, event_embeddings)
+    print("topic sim", topic_similarities) #debug
     event_scores = list(np.max(topic_similarities, axis=0))
-    selected_events = [e for e, score in zip(events, event_scores) if score >= request.threshold]
-
+    print("event scores", event_scores) #debug
     # Adjust for location
     max_distance = 5000
     location_scores = [
@@ -405,17 +417,27 @@ def explore_events(request: ExploreRequest = Depends()):
             )/max_distance, 1)
         for e in events
     ]
+
+    ESL = zip(events, event_scores, location_scores)
+
     #remove the events with more than 5000 km distance
-    user_similarities = np.array([user_similarities[i] for i, score in enumerate(location_scores) if score < 1])
-    location_scores = [score for score in location_scores if score < 1]
+    ESL = [(event, score, loc) for event, score, loc in ESL if loc < 1]
+    #remove the events with not enough similarity to the topics
+    ESL = [(event, score, loc) for event, score, loc in ESL if score >= request.individual_threshold]
 
     # Combine scores (weights: similarity 70%, location 30%)
     alpha = 0.7
     beta = 0.3
 
+    topic_similarities = np.array([score for _, score, _ in ESL])
+    location_scores = [loc for _, _, loc in ESL]    
+    selected_events = [event for event, _, _ in ESL]
+    del ESL
+
+    print(topic_similarities) #debug
     final_scores = [
-        np.array(user) * alpha + np.array(loc) * beta for user, loc in zip(
-            (topic_similarities/np.linalg.norm(topic_similarities.sum(axis=0), ord=1)).tolist(),
+        np.array(score) * alpha + np.array(loc) * beta for score, loc in zip(
+            (topic_similarities/np.linalg.norm(topic_similarities, ord=1)).tolist(),
             (np.array(location_scores)/np.linalg.norm(location_scores, ord=1)).tolist()
         )
     ]
@@ -466,6 +488,28 @@ def get_recommendations(location: LocationRequest = Depends()):
 
     return NumpyResponse({"events": [{"event": e, "score": s} for s, e in ranked_events]})
 
+@app.post("/get_types")
+def get_types(request: GetTypesRequest = Depends()):
+    #groups the events by the types and returns the events that are most similar to the types
+    #if other_threshold is set, the events that are not similar to the types are grouped as other and returned as well
+
+    #get the embeddings of the types
+    type_embeddings = model.encode(request.types)
+    event_idx = [e.get("id") for e in request.events]
+
+    #get the event embeddings
+    event_embeddings_ = [event_embeddings[i] for i in event_idx]
+
+    #compute the similarities
+    similarities = cosine_similarity(type_embeddings, event_embeddings_)
+
+    #get the best match for each event
+    max_indexes = list(np.argmax(similarities, axis=0))
+    similarities = np.array([similarities[max_indexes, i] for i in range(len(max_indexes))])
+                            
+    #return the events with the type it suits best
+    return NumpyResponse({"events": [{"event": request.events[i], "score": similarities[i], "type":"other" if similarities[i]<request.other_threshold else request.types[m]} for i,m in enumerate(max_indexes)]})
+    
 
 ######################################################################################
 #                                   PROTECTED ENDPOINTS                              #
@@ -508,7 +552,7 @@ def update_preferences(preferences: Dict[Literal["add","remove"], List[str]], us
 
 
 #TOOD: get good values for alpha, beta, gamma, threshold
-@app.post("/user/search")
+@app.get("/user/search")
 def search_events_user(request: SearchRequest = Depends(), user:User = Depends(get_authenticated_user_from_session_id)):
 
     user_similarities = compare_preference_events(user.get("username"))
@@ -563,6 +607,9 @@ def search_events_user(request: SearchRequest = Depends(), user:User = Depends(g
             break
     ranked_events = ranked_events[:threshold_event+1]
 
+    #now only consider events with inidivual similarity above the minimum threshold
+    ranked_events = [(score, event) for score, event in ranked_events if score >= request.individual_threshold]
+
     return NumpyResponse({"events": [{"event": e, "score": s} for s, e in ranked_events]})
 
 
@@ -575,14 +622,14 @@ def explore_events_user(request:ExploreRequest = Depends(), user:User = Depends(
 
     #TODO: get good value for threshold, 
     #TODO: do we expose the threshold to the user, if so we should expose a transformed value, maybe exp or sth
-    threshold = request.threshold
+    #split the query on several standard seperators
+    topics = re.split(r"[,; ]+", request.query)
 
     # Get event scores by topics
-    topic_embeddings = model.encode(request.topics)
+    topic_embeddings = model.encode()
     topic_similarities = cosine_similarity(topic_embeddings, event_embeddings)
     #select events that have at least once a similarity above the threshold
     event_scores = list(np.max(topic_similarities, axis=0))
-    selected_events = [e for e, score in zip(events, event_scores) if score >= threshold]
 
     # Adjust for location
     max_distance = 5000  # Example max distance in km
@@ -593,13 +640,22 @@ def explore_events_user(request:ExploreRequest = Depends(), user:User = Depends(
             )/max_distance, 1)
         for e in events
     ]
+
+    ESL = zip(events, event_scores, location_scores)
+
     #remove the events with more than 5000 km distance
-    user_similarities = np.array([user_similarities[i] for i, score in enumerate(location_scores) if score < 1])
-    location_scores = [score for score in location_scores if score < 1]
+    ESL = [(event, score, loc) for event, score, loc in ESL if loc < 1]
+    #remove the events with not enough similarity to the topics
+    ESL = [(event, score, loc) for event, score, loc in ESL if score >= request.individual_threshold]
 
     #rank by similarity to the user preferences and location
     alpha = 0.7
     beta = 0.3
+
+    topic_similarities = np.array([score for _, score, _ in ESL])
+    location_scores = [loc for _, _, loc in ESL]
+    selected_events = [event for event, _, _ in ESL]
+    del ESL
 
     final_scores = [
         np.array(user) * alpha + np.array(loc) * beta for user, loc in zip(

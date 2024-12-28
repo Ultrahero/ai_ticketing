@@ -117,7 +117,10 @@ export default {
 
             selectedDate: null,
             selectedSeats: 0,
-            menu: false
+            menu: false,
+
+            dateMessage: "",
+            seatMessage: ""
         }
     },
     methods: {
@@ -145,13 +148,18 @@ export default {
             this.loadingSimilar = false;
         },
         async addToCart(){
+            if (!this.selectedDate){
+                this.dateMessage = "Please select a Date";
+                return;
+            }
+            if (!this.selectedSeats){
+                this.seatMessage = "Please select Seats";
+                return;
+            }
             this.$emit('add-to-cart', {
-                id: this.thisEvent.id,
-                name: this.thisEvent.name,
-                price: Math.min(...this.thisEvent.price),
-                dates: this.thisEvent.dates,
-                location: this.thisEvent.location,
-                short_description: this.thisEvent.short_description
+                event : this.thisEvent,
+                dateIndex : this.thisEvent.dates.indexOf(this.selectedDate),
+                quantity : this.selectedSeats
             });
             this.selectedSeats = 0;
             this.selectedDate = null;
@@ -171,7 +179,7 @@ export default {
         
         <v-row >
             <v-col cols="12" md="10" sm="6" class="mx-auto">
-            <v-card outlined :style="`background-color:${title_color};`">
+            <v-card outlined style="background-color:rgba(var(--v-theme-secondary), 0.8)">
                 <v-card-title class="text-h5"> {{ thisEvent.name }}</v-card-title>
                 <v-card-subtitle class="text-subtitle-2">{{ thisEvent.theme }}</v-card-subtitle>
             
@@ -183,7 +191,7 @@ export default {
     <v-row class="mt-0" >
         <!-- Gallery Section -->
         <v-col cols="12" md="10" sm="6" class="mx-auto">
-          <v-row dense style="background-color: var(--v-theme-background-color);">
+          <v-row dense>
             <v-col cols="3" v-for="i in 4" :key="`placeholder-image-${i}`">
               <v-img :src="`/placeholder_${i-1}.jpg`" cover class="rounded-lg" aspect-ratio="0.666" :id="`image-${i}`"/>
             </v-col>
@@ -192,7 +200,7 @@ export default {
     </v-row>
     <v-row class="mb-4 mt-0">
         <v-col cols="12" md="10" sm="6" class="mx-auto">
-          <v-card outlined class="details-card" style="width:100%">
+          <v-card outlined style="width:100%; background-color: --v-theme-secondary;">
             <v-list>
               <v-list-item prepend-icon="mdi-calendar">
                   <v-list-item-title>{{ thisEvent.dates.length>1?'Dates':'Date' }}</v-list-item-title>
@@ -212,14 +220,14 @@ export default {
               </v-list-item>
             </v-list>
   
-            <v-card-text>
+            <v-card-text style="background-color:rgba(var(--v-theme-secondary), 0.8)">
               <p>{{ hashtags }}</p>
               <br>
               <strong>Description:</strong>
               <p>{{ thisEvent.long_description }}</p>
             </v-card-text>
 
-            <v-row class="mb-2 d-flex justify-center">
+            <v-row class="mb-2 d-flex justify-center" style="background-color:rgba(var(--v-theme-secondary), 0.8)">
             <v-col cols="3" class="d-flex justify-space-around align-center">
                 <v-btn icon color="blue">
                     <v-icon>mdi-bookmark</v-icon>
@@ -246,6 +254,8 @@ export default {
                     placeholder="Select Date"
                     required
                     class="pb-0"
+                    :hint="dateMessage"
+                    :change="dateMessage=''"
                 ></v-select>
                 <v-select
                     v-model="selectedSeats"
@@ -254,6 +264,8 @@ export default {
                     placeholder="Select Seats"
                     required
                     class="pb-0"
+                    :hint="seatMessage"
+                    :change="seatMessage=''"
                 ></v-select>
             </v-col>
         </v-row>
@@ -265,9 +277,9 @@ export default {
                 <v-btn text color="primary" type="submit" block class="rounded-bs-0 rounded-te-0 rounded-ts-0">Add to Cart</v-btn>
             </v-col>
         </v-row>
-    </v-form>
+        </v-form>
     </v-container>
-                    </v-menu>
+    </v-menu>
                 </v-col>
             </v-row>
             
@@ -278,18 +290,18 @@ export default {
     <v-row>
       <!-- Similar Events Section -->
       <v-col cols="12" md="10" sm="6" class="mx-auto">
-      <v-card outlined class="mb-4 bg-teal-lighten-5">
+      <v-card outlined class="mb-4" style="background-color:rgba(0, 214, 199,0.3);">
         <v-card-title>Similar Events</v-card-title>
         <v-card-text>
           <v-row dense >
             <v-col cols="4" v-for="i in 3" :key="i">
-              <v-card outlined class="bg-white">
+              <v-card outlined>
                 <v-img :src="`/placeholder_${i}.jpg`" aspect-ratio="1" cover>
                 </v-img>
                 <v-card-title>{{ similar_events[i-1].name }}</v-card-title>
                 <v-card-actions>
                     <NuxtLink :to="'/events/' + similar_events[i-1].id">
-                        <v-btn text color="primary">View</v-btn>
+                        <v-btn text color="rgb(0, 128, 119)">View</v-btn>
                     </NuxtLink>
                 </v-card-actions>
               </v-card>
@@ -306,23 +318,7 @@ export default {
 <style scoped>
   .event-page {
     font-family: Arial, sans-serif;
-  }
-  
-  .gallery {
-    background-color: #fff3cd;
-  }
-  
-  .details-card {
-    background: #fff8e1;
-  }
-  
-  .similar-events {
-    background-color: #f9f9f9;
-  }
-  
-  .v-footer {
-    padding: 10px;
-    background-color: #e0e0e0;
+    background-color: var(--v-theme-tertiary);
   }
 </style>
   

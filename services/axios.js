@@ -18,7 +18,7 @@ const axiosInstance = axios.create({
 // Add a request interceptor. If user authenticated, add session_id to request headers THIS SHOULD BE DONE IN THE STORE INSTEAD
 // const authInterceptor = axios.interceptors.request.use((config) => {
 //     userStore = useUserStore();
-//     if (userStore.isAuthenticated()) {
+//     if (userStore.authenticated) {
 //         config.headers.session_id = userStore.session_id;
 //     }
 // });
@@ -31,7 +31,7 @@ let user_redirect_routes = {
 }
 const userRerouteInterceptor = axios.interceptors.request.use((config) => {
     userStore = useUserStore();
-    if (userStore.isAuthenticated()) {
+    if (userStore.authenticated) {
         if (user_redirect_routes[config.url]) {
             config.url = user_redirect_routes[config.url];
         }

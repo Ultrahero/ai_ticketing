@@ -1,8 +1,9 @@
 <script lang="ts">
 import { useCartStore } from '@/stores/cart';
+import { useUserStore } from '@/stores/user';
 import { useTheme } from 'vuetify'
 import axiosInstance from './services/axios';
-import { set } from 'ol/transform';
+
 export default {
   setup() {
     const theme = useTheme()
@@ -11,10 +12,11 @@ export default {
     }
 
     const cartStore = useCartStore();
-
     cartStore.fetchEvents();
 
-    return { cartStore, toggleTheme }
+    const userStore = useUserStore();
+
+    return { cartStore, userStore, toggleTheme }
   },
   data() {
     return {
@@ -26,7 +28,10 @@ export default {
       rail_width: '60',
 
       filter: {
-        location: [38.89853520573355, -77.03586539092846], //longitude, latitude [default is Washington DC]
+        location: {
+          lat:38.89853520573355, 
+          long:-77.03586539092846
+        }, //longitude, latitude [default is Washington DC]
         radius: 1000,//in km
         price: Infinity, //less than or equal, in dollars
         date: new Date(), //date
@@ -40,10 +45,21 @@ export default {
       cart_not_empty: false,
 
       isLoading: false,
+
+      searchExpanded: false,
+      exploreExpanded: false,
+
+      events: [],
+
+      currentQuery: ""
+      
     }
   },
+  mounted(){
+    this.events = this.cartStore.events; //initially set the events to the events available in the store
+  },
   methods: {
-    pages() {
+    pages(es) {
       return ([
         { title: 'Recommendations', icon: 'mdi-flask-outline', to: '/', pageID: 'index' },
         { title: 'Account', icon: 'mdi-account-circle', to: '/account', pageID: 'account' },
@@ -53,16 +69,18 @@ export default {
         // { title: 'Search', icon: 'mdi-magnify', to: '/search', pageID: 'search' },
         // { title: 'Ticket', icon: 'mdi-ticket', to: '/ticket', pageID: 'ticket' },
         { title: 'About', icon: 'mdi-information', to: '/about', pageID: 'about' },
+        { title: 'Search Results', icon: 'mdi-magnify', to: '/search', pageID: 'search' },
+        { title: 'Explore Results', icon: 'mdi-compass-outline', to: '/explore', pageID: 'explore' },
         
         { title: 'Unknown Page', icon: 'mdi-help', to: '/unknown', pageID: 'unknown' }
-      ].concat(this.cartStore.availableEvents.map((event) => { return {
+      ].concat(es.map((event) => { return {
        title: "Event - " + event.name, icon: 'mdi-ticket', to: '/events/' + event.id, pageID: 'events-id'
       }}))
     )},
     getPageName() {
       const page_name = this.$route.name || 'unknown';
       console.log('Page Name:', page_name);
-      let page = this.pages().find(page => page.pageID == page_name)
+      let page = this.pages(this.events).find(page => page.pageID == page_name)
       if (page) {
         return page.title
       }else{
@@ -126,13 +144,13 @@ export default {
               if (draggedIndex !== null) {
                 
                 // Remove the dragged item from its original position
-                const draggedItem = this.pages().splice(draggedIndex, 1)[0];
+                const draggedItem = this.pages(this.events).splice(draggedIndex, 1)[0];
 
                 // Insert the dragged item at the placeholder's position
-                this.pages().splice(targetIndex - (targetIndex>draggedIndex?1:0), 1, draggedItem);
+                this.pages(this.events).splice(targetIndex - (targetIndex>draggedIndex?1:0), 1, draggedItem);
                 
                 
-                console.error("Updated pages: ", this.pages());
+                console.error("Updated pages: ", this.pages(this.events));
                 // Reset variables
                 draggedIndex = null;
               }
@@ -192,25 +210,88 @@ export default {
       this.tmp_username=""; 
       this.tmp_password=""
     },
-    async searchEvents() {
-      const response = await axiosInstance.post("http://localhost:8000/search", {
-        preferences: this.preferences, //one string, comma separated
-        keywords: this.keywords, //one string, comma separated
-        location: [this.selected_location.lat, this.selected_location.lng],
-      });
-      this.results = response.data.ranked_events; //array of event objects with rank: [{event: event, rank: rank}]
+    async getEvents(t:string, query:string) {
+      var response = null
+      if(this.userStore.authenticated){
+        response = await axiosInstance.get(`/user/${t}`,{
+            params: {
+              query: query,
+              lat: this.userStore.location.lat,
+              long: this.userStore.location.long,
+
+            },
+            headers: {
+              Authorization: `Bearer ${this.userStore.sessionId}`
+            }
+          }
+        );
+      }else{
+        response = await axiosInstance.get(`/${t}`,{
+            params: {
+              query: query,
+              lat: this.filter.location.lat,
+              long: this.filter.location.long
+            } 
+          }
+        );
+      }
+      let result = response.data.events.map((v:{event:object, score:number})=>{return v.event}); //we also get the ranking scores, but we only need the event data
+      console.log("Resulting Events: ", result);
+      this.events = result; //array of event objects with rank: [{event: event, rank: rank}]
+
+      //redirect to the search page
+      this.$router.push(`/${t}`);
     },
     cartChange(){//gets called when the cart changes
-      this.card_not_empty = this.cartStore.count() > 0;
+      this.cart_not_empty = this.cartStore.count > 0;
     },
     addToCart(event){
       this.cartStore.addEvent(event);
       this.cartChange();
     },
+    handleCheckout(){
+      this.cartChange();
+    },
     setProgressBar(isLoading:boolean){
       this.isLoading = isLoading;
-    }
+    },
+    searchHasExpanded(){
+      this.exploreExpanded = false;
+    },
+    exploreHasExpanded(){
+      this.searchExpanded = false;
+    },
+    handleSearch(value:string){
+      console.log("searching: ", value);
+      if (value.length > 0){
+        this.currentQuery = value;
+        this.getEvents("search", value);
+      }else{
+        this.currentQuery = "";
+        this.events = this.cartStore.events;
+      }
+    },
+    handleExplore(value:string){
+      console.log("exploring: ", value);
+      if (value.length > 0){
+        this.currentQuery = value;
+        this.getEvents("explore", value);
+      }else{
+        this.currentQuery = "";
+        this.events = this.cartStore.events;
+      }
+    },
   },
+  beforeRouteEnter(to, from, next) {
+    if(to.name=="/" && (from.name=="/search" || from.name=="/explore")){
+      next(next_ctx => {
+        next_ctx.currentQuery = "";
+      });
+    }
+    else{
+      next();
+    }
+  }
 }
 </script>
 
@@ -228,8 +309,8 @@ export default {
       </v-app-bar-title>
       <!-- <v-spacer></v-spacer> -->
       <div class="center-actions">
-        <search></search>
-        <explore></explore>
+        <search @search="handleSearch"></search>
+        <explore @explore="handleExplore"></explore>
       </div>
       <!-- <v-spacer></v-spacer> -->
       <nuxt-link class="app-bar-link" to="/">
@@ -258,7 +339,7 @@ export default {
         </v-btn>
       </nuxt-link>
 
-      <Cart v-if="cart_not_empty"></Cart>
+      <Cart v-if="cart_not_empty" @checkout="handleCheckout"></Cart>
 
       <template v-slot:append>
         <v-app-bar-nav-icon @click.stop="rail_width=rail_width==`220`?`60`:`220`"></v-app-bar-nav-icon>
@@ -266,12 +347,17 @@ export default {
     </v-app-bar>
     <v-progress-linear v-if="isLoading" color="secondary" indeterminate></v-progress-linear>
 
-    <v-main @mousemove="checkHoverDrawer">
+    <v-main @mousemove="checkHoverDrawer" class="main-container">
 
 
       <v-navigation-drawer permanent rail :rail-width="rail_width" v-model="drawer" app @mouseover="drawer_hover = true" @mouseleave="leaveHoverDrawer()">
         <v-list nav class="d-flex flex-column" style="height: calc(100% - 50px);">
-          <v-list-item class="page-list-items" v-for="page in pages().filter((p) => p.pageID != 'unknown' && !p.pageID.startsWith('events'))" :prepend-icon="page.pageID == 'index' ? 'mdi-home' : page.icon" :to="page.to" :key="page.pageID">
+          <v-list-item class="page-list-items" v-for="page in pages(events).filter(
+            (p) => p.pageID != 'unknown' 
+              && !p.pageID.startsWith('events') 
+              && !p.pageID.startsWith('search') 
+              && !p.pageID.startsWith('explore')
+            )" :prepend-icon="page.pageID == 'index' ? 'mdi-home' : page.icon" :to="page.to" :key="page.pageID">
             <v-list-item-title>{{ page.title }}</v-list-item-title>
           </v-list-item>
 
@@ -293,12 +379,12 @@ export default {
       </v-navigation-drawer>
 
       <v-container>
-          <NuxtPage @loading="setProgressBar"/>
+          <NuxtPage @loading="setProgressBar" v-model:filter="filter" :tickets="events" :query="currentQuery" @add-to-cart="addToCart"/>
       </v-container>
 
     </v-main>
 
-    <v-footer color="purple-lighten-2" class="sticky-footer">
+    <v-footer color="rgb(var(--v-theme-primary))" class="sticky-footer">
       <div class="footer-div">
         <span>&copy; 2024 AI Ticketing - 2024952850 - COSE43200 </span>
         <nuxt-link to="/about" class="app-bar-link">About Us</nuxt-link>
@@ -361,5 +447,9 @@ export default {
 .v-overlay__content {
   margin : 0;
   padding : 0;
+}
+
+.main-container{
+  background: linear-gradient(110deg, rgba(var(--v-theme-secondary), 60) 0%, rgba(var(--v-theme-primary), 60) 60%, rgba(var(--v-theme-accent), 60) 100%);
 }
 </style>

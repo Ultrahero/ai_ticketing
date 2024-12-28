@@ -11,12 +11,15 @@ export default defineNuxtPlugin((nuxtApp) => {
             defaultSet: 'mdi',
         },
         theme: {
+            defaultTheme: 'light',
             themes: {
                 light: {
                     colors: {
-                        primary: '#1976D2',
-                        secondary: '#424242',
-                        accent: '#82B1FF',
+                        text: '#040316',
+                        background: '#fbfbfe',
+                        primary: '#FFCD29',
+                        secondary: '#E4CCFF',
+                        accent: '#f79c1d',
                         error: '#FF5252',
                         info: '#2196F3',
                         success: '#4CAF50',
@@ -25,9 +28,11 @@ export default defineNuxtPlugin((nuxtApp) => {
                 },
                 dark: {
                     colors: {
-                        primary: '#BB86FC',
-                        secondary: '#03DAC6',
-                        accent: '#03DAC6',
+                        text: '#eae9fc',
+                        background: '#010104',
+                        primary: '#d6a400',
+                        secondary: '#180033',
+                        accent: '#e28708',
                         error: '#CF6679',
                         info: '#2196F3',
                         success: '#4CAF50',

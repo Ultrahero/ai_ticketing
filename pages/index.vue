@@ -7,13 +7,18 @@ import type { loadNuxtConfig } from 'nuxt/kit';
 
 export default {
     async setup() {
+        const filter = defineModel('filter', {
+            type: Object,
+            default: {}
+        });
+
         const userStore = useUserStore();
         const cartStore = useCartStore();
         // cartStore.fetchEvents();
         // var tickets = ref(cartStore.events);
         // console.log(tickets);
 
-        return { userStore, cartStore }
+        return { userStore, cartStore, filter }
     },
     data() {
         return {
@@ -28,7 +33,7 @@ export default {
             this.isLoading = true;
             this.$emit('loading', this.isLoading);
             var response = null;
-            if(this.userStore.isAuthenticated()){
+            if(this.userStore.authenticated){
                 response = await axiosInstance.get('/user/recommendations', {
                 headers: {
                     Authorization: `Bearer ${this.userStore.sessionId}`
@@ -43,7 +48,7 @@ export default {
                 );
             }
             
-            this.tickets = response.data.events;
+            this.tickets = response.data.events.map((v:{event:object, score:number})=>{return v.event}); // we also get the ranking scores, but we only need the event data
             this.isLoading = false;
             this.$emit('loading', this.isLoading);
             console.log(this.tickets);
@@ -58,6 +63,6 @@ export default {
 
 <template>
     <v-container>
-        <TicketPage :tickets="tickets" @add-to-cart="$emit('add-to-cart', $event)"></TicketPage>
+        <TicketPage :tickets="tickets" @add-to-cart="(event)=>{$emit('add-to-cart', event)}"></TicketPage>
     </v-container>
 </template>

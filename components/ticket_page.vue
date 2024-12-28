@@ -4,7 +4,7 @@
             <slot name="upper-page"></slot>
         </section>
         <section class="ticket-grid">
-            <ticket-card v-for="ticket in tickets" :key="ticket.id" :ticket="ticket" @add-to-cart="$emit('add-to-cart', $event)" />
+            <ticket-card v-for="ticket in tickets" :key="ticket.id" :ticket="ticket" @add-to-cart="(event)=>{$emit('add-to-cart', event)}"/>
         </section>
     </div>
 </template>

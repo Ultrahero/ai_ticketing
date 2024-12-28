@@ -25,9 +25,12 @@ export const useUserStore = defineStore("user", {
       lat: 0,
       long: 0,
     },
+    tickets_: [],
   }),
   getters: {
     session_id: (state) => state.sessionId,
+    authenticated: (state) => !!state.sessionId,
+    tickets: (state) => state.tickets_,
   },
   actions: {
     async signUp(username, password) {
@@ -114,9 +117,8 @@ export const useUserStore = defineStore("user", {
         throw error;
       }
     },
-    isAuthenticated() {
-      return !!this.sessionId;
-    },
-
+    async addTickets(tickets){
+      this.tickets_ = this.tickets_.concat(tickets);
+    }
   },
 });
